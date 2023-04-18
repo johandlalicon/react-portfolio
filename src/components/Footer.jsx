@@ -7,8 +7,20 @@ function Footer() {
   return (
     <div className="footer">
       <div className="socialMedia">
-        <GitHubIcon />
-        <LinkedInIcon />
+        <a
+          href="https://github.com/johandlalicon"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <GitHubIcon />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/johan-lalicon/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <LinkedInIcon />
+        </a>
       </div>
       <p>&copy; 2023 Johannes Lalicon</p>
     </div>

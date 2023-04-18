@@ -49,7 +49,11 @@ function Home() {
           >
             <LinkedInIcon />
           </a>
-          <a href="">
+          <a
+            href="https://drive.google.com/file/d/1DTeh0xtVBkFEfgUjm6LHpoCNnS82O26U/view?usp=share_link"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FileOpenIcon />
           </a>
           <a href="mailto:johandlalicon@hotmail.com.com?subject=Portfolio Inquiry">
