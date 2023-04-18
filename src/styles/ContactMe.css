@@ -1,0 +1,42 @@
+.form-wrapper {
+  background-color: #21325e;
+
+  grid-column: 2/-1;
+}
+
+.form-wrapper {
+  width: 100%;
+}
+
+.form-wrapper h1 {
+  color: #e9d35b;
+}
+.contact-form button {
+  background-color: #e9d35b;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  color: #21325e;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  text-decoration: none;
+  background-color: #e9d35b;
+  padding: none;
+  cursor: pointer;
+}
+
+.contact-form span {
+  color: #e94560;
+}
+.contact-form {
+  display: grid;
+  place-items: center;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}

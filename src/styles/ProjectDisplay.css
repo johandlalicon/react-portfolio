@@ -1,0 +1,113 @@
+.project {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-column: 1fr 1fr;
+  color: #3e497a;
+}
+
+.project img {
+  max-width: 100%; /* set the maximum width of the image to 100% of the container's width */
+  height: auto; /* set the height of the image to auto to maintain aspect ratio */
+  display: block;
+}
+
+.image-wrap {
+  max-width: 300px; /* set the maximum width of the container */
+  max-height: 550px; /* set the maximum height of the container */ /* hide any content that exceeds the container's dimensions */
+}
+.project-link {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+
+.link-wrap {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+.link-wrap a {
+  text-decoration: none;
+  color: #3e497a;
+}
+
+.project-link span {
+  display: block;
+}
+
+.project p {
+  color: #3e497a;
+  font-size: 20px;
+}
+
+.project svg {
+  font-size: 40px;
+  color: #3e497a;
+}
+
+.about-wrap {
+  text-align: center;
+  padding: 0 20px;
+  justify-self: center; /* center the child horizontally */
+  align-self: center;
+}
+
+.about-wrap i {
+  font-size: 14px;
+}
+
+.skills-used p {
+  font-size: 15px;
+}
+
+.project-details {
+  grid-column: 2/-1;
+  grid-row: 1/-1;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.project-details h2 {
+  text-align: center;
+}
+
+.project button {
+  border: none;
+  cursor: pointer;
+  color: #3e497a;
+  padding: 20px;
+}
+
+.next-prev {
+  grid-column: 1/-1;
+  justify-self: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .about-wrap {
+    text-align: center;
+  }
+
+  .project {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+    color: #3e497a;
+  }
+
+  .project-details {
+    flex-direction: column;
+  }
+
+  .project-features ul {
+    border-top: 2px solid #21325e;
+  }
+}

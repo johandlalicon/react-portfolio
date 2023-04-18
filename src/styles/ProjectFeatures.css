@@ -1,0 +1,29 @@
+.project-features {
+  font-size: 15px;
+  width: 250px;
+  border-left: 2px solid #21325e;
+}
+
+.project-features ul {
+  list-style: none;
+  padding: 5px 15px;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+.project-features h2 {
+  margin: 5px 0;
+  text-align: start;
+}
+
+@media only screen and (max-width: 600px) {
+  .project-features {
+    border: none;
+    text-align: center;
+    font-size: 18px;
+  }
+  .project-features h2 {
+    text-align: center;
+    margin: none;
+  }
+}

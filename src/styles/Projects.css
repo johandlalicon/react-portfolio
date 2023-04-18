@@ -1,0 +1,122 @@
+.projects {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #f0f0f0;
+  background-color: #21325e;
+  color: #e9d35b;
+  height: calc(100vh - 70px);
+}
+
+.projects h1 {
+  font-size: 40px;
+}
+.projects .projectTitle {
+  text-align: center;
+  color: #3e497a;
+  font-size: 60px;
+  font-weight: bolder;
+}
+
+.projectList {
+  width: 70vw;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+}
+
+/* MENU ITEM STYLING */
+
+.projectItem {
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  width: 300px;
+  height: 300px;
+  margin: 40px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.projectItem:hover {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+.projectItem .bgImage {
+  border-radius: 15px;
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.projectItem h1 {
+  font-size: 25px;
+  color: #f0f0f0;
+}
+
+.show-project {
+  place-items: center;
+  position: absolute;
+  color: #e9d35b;
+  display: none;
+  transition: opacity 0.3s ease; /* Add a transition effect to the opacity property */
+}
+
+.show-project p {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.bgImage:hover {
+  filter: brightness(40%);
+}
+.projectItem:hover .show-project {
+  display: block; /* Show the text on hover by setting the opacity to 1 */
+}
+
+@media only screen and (max-width: 1300px) {
+  .projectList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .projectList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .projects {
+    height: auto;
+  }
+  .projectList {
+    width: 100%;
+  }
+  .projectItem {
+    position: relative;
+  }
+  .show-project {
+    position: absolute;
+    display: block;
+    align-self: flex-end;
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    bottom: 0;
+    background-color: #f0f0f0;
+    color: #21325e;
+  }
+  .show-project h1 {
+    color: #21325e;
+  }
+  .show-project p {
+    font-size: 15px;
+  }
+}
