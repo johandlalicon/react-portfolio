@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Home.css";
 import ContactMe from "./ContactMe";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -29,7 +30,7 @@ function Home() {
           <p>
             Check out my{" "}
             <span>
-              <a href="/projects">projects</a>
+              <Link to="/projects">projects</Link>
             </span>
             !
           </p>

@@ -1,8 +1,9 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/ProjectDisplay.css";
 import ProjectFeatures from "../components/ProjectFeatures";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { ProjectList } from "../helpers/Projectlist.js";
@@ -13,9 +14,12 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function ProjectDisplay() {
   const { id } = useParams();
-
   const project = ProjectList[id];
-  const [showBtn, setShowBtn] = useState(Number(id) === 0 ? true : false);
+  const [showBtn, setShowBtn] = useState(true);
+  let navigate = useNavigate();
+  useEffect(() => {
+    setShowBtn(Number(id) === 0 ? true : false);
+  });
 
   return (
     <div className="project">
@@ -37,9 +41,6 @@ function ProjectDisplay() {
             *** Live site is hosted on Render for free, load time take 1-2 mins.
           </i>
         </span>
-        {/* <div className="image-wrap">
-          <img src={project.image} />
-        </div> */}
       </div>
       <div className="project-details">
         <div>
@@ -49,14 +50,13 @@ function ProjectDisplay() {
       </div>
 
       <div className="next-prev">
-        <a href={showBtn ? "/projects/1" : "/projects/0"}>
-          <button>
-            {showBtn ? <ArrowForwardIcon /> : <ArrowBackIcon />}
-            <span style={{ display: "block" }}>
-              {showBtn ? "NEXT PROJECT" : "PREV PROJECT"}
-            </span>
-          </button>
-        </a>
+        <button
+          onClick={() => {
+            navigate(showBtn ? "/projects/1" : "/projects/0");
+          }}
+        >
+          {showBtn ? <ArrowForwardIcon /> : <ArrowBackIcon />}
+        </button>
       </div>
     </div>
   );
