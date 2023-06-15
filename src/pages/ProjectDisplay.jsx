@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "../styles/ProjectDisplay.css";
@@ -15,11 +15,31 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 function ProjectDisplay() {
   const { id } = useParams();
   const project = ProjectList[id];
-  const [showBtn, setShowBtn] = useState(true);
+  const [nextPage, setNextPage] = useState(true);
+  const [prevPage, setPrevPage] = useState(true);
+
   let navigate = useNavigate();
+  const parsedId = Number(id);
+
   useEffect(() => {
-    setShowBtn(Number(id) === 0 ? true : false);
-  });
+    if (parsedId === ProjectList.length - 1) {
+      setNextPage(false);
+      setPrevPage(true);
+    } else if (parsedId === 0) {
+      setPrevPage(false);
+      setNextPage(true);
+    } else {
+      setPrevPage(true);
+      setNextPage(true);
+    }
+  }, [id]);
+
+  function nextProject() {
+    navigate(`/projects/${parsedId + 1}`);
+  }
+  function prevProject() {
+    navigate(`/projects/${parsedId - 1}`);
+  }
 
   return (
     <div className="project">
@@ -50,20 +70,19 @@ function ProjectDisplay() {
       </div>
 
       <div className="next-prev">
-        <button
-          onClick={() => {
-            navigate(showBtn ? "/projects/1" : "/projects/0");
-          }}
-        >
-          {showBtn ? <ArrowForwardIcon /> : <ArrowBackIcon />}
-        </button>
+        {prevPage && (
+          <button onClick={() => prevProject()}>
+            <ArrowBackIcon />
+          </button>
+        )}
+        {nextPage && (
+          <button onClick={() => nextProject()}>
+            <ArrowForwardIcon />
+          </button>
+        )}
       </div>
     </div>
   );
 }
-
-/* <div className="image-wrap">
-          <img src={project.image} />
-        </div> */
 
 export default ProjectDisplay;

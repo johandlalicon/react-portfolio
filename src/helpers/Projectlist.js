@@ -1,5 +1,6 @@
 import Yelpcamp from "../assets/Yelpcamp.JPG";
 import Gamesite from "../assets/Gamesite.JPG";
+import Chatapp from "../assets/Chatapp.JPG";
 
 export const ProjectList = [
   {
@@ -31,6 +32,35 @@ export const ProjectList = [
   },
   {
     id: 1,
+    name: "Chat App",
+    image: Chatapp,
+    skills: [
+      "React",
+      "Tailwind",
+      "Javascript",
+      "Node.js",
+      "Express.js",
+      "Axios",
+      "WebSocket API",
+      "MongoDB",
+    ],
+    features: [
+      "Full-stack website",
+      "Users can create an account or log in if you already have one.",
+      "Send message instantly.",
+      "Add a contact",
+      "Display users that are online and offline",
+      "Group Chat(coming soon)",
+      "Multimedia sharing(coming soon)",
+      "Push notifications keep users connected.(coming soon)",
+    ],
+    about:
+      "This project is currently under development, offering basic features for a messaging. Future updates will include adding friends, real-time  multimedia sharing, and a group chat. I decided to create a chat app to gain hands-on experience with the intricate details of building a real-time communication platform. I was able to, not only deepen my understanding of the underlying technologies, such as web sockets, but also equip myself with valuable skills and insights applicable to a wide range of software development projects.",
+    github: "https://github.com/johandlalicon/reactchatapp",
+    live: "https://cheesemiss.onrender.com/",
+  },
+  {
+    id: 2,
     name: "Yelp Camp",
     image: Yelpcamp,
     skills: [

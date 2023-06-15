@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,6 +6,7 @@ import "../styles/ContactMe.css";
 import emailjs from "@emailjs/browser";
 
 function ContactMe() {
+  const [msgSent, setMsgSent] = useState(false);
   const schema = yup.object().shape({
     name: yup.string().required("Missing name"),
     email: yup.string().email().required("Email is required"),
@@ -32,7 +33,7 @@ function ContactMe() {
         (result) => {
           document.getElementById("contact-form-id").reset();
           console.log("Message Sent");
-          console.log(result.text);
+          setMsgSent(true);
         },
         (error) => {
           console.log(error.text);
@@ -68,6 +69,7 @@ function ContactMe() {
         <button>
           <input type="submit" className="submit-btn" />
         </button>
+        <span>{msgSent ? "Message Sent" : ""}</span>
       </form>
     </div>
   );
